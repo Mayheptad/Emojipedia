@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Heading from './Components/Heading';
+import Entry from './Components/Entry';
+import emojipedia from './Components/emojipedia';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+  <Heading />
+  <dl className="dictionary">
+ {emojipedia.map((eachEmoji, index) => <Entry emoji={eachEmoji.emoji} name={eachEmoji.name} meaning={eachEmoji.meaning}/> )} 
+  </dl>
     </div>
   );
 }
